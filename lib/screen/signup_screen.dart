@@ -124,6 +124,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             context,
                             'there was an error , please try again',
                             Colors.red);
+                        print(e);
                       }
                     } else {}
                     isLoading = false;

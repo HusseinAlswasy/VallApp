@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/screen/Home_screen.dart';
 import 'package:untitled/screen/Login_screen.dart';
 import 'package:untitled/screen/signup_screen.dart';
 
@@ -18,11 +19,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-        LoginScreen.id: (context) => LoginScreen(),
-        SignUpScreen.id: (context) => SignUpScreen(),
-      },
-      initialRoute: 'LoginScreen',
+      // routes: {
+      //   LoginScreen.id: (context) => LoginScreen(),
+      //   SignUpScreen.id: (context) => SignUpScreen(),
+      //   HomeScreen.id: (context) => HomeScreen(),
+      // },
+      // initialRoute: LoginScreen.id,
+      home: HomeScreen(),
     );
   }
 }
