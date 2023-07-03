@@ -4,8 +4,9 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:untitled/components/custome_button.dart';
 import 'package:untitled/components/custome_text_field.dart';
 import 'package:untitled/components/show_snak_bar.dart';
-import 'package:untitled/constent/constents.dart';
+import 'package:untitled/screen/Home_screen.dart';
 import 'package:untitled/screen/signup_screen.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -100,6 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           await loginUser();
                           showSnackBar(
                               context, 'email login success', Colors.green);
+                            Navigator.pushNamed(context, HomeScreen.id);
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'user-not-found') {
                             showSnackBar(context,
@@ -113,7 +115,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               context,
                               'there was an error , please try again',
                               Colors.red);
+                          print(e);
                         }
+
                       } else {}
                       isLoading = false;
                       setState(() {

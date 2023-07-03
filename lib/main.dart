@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/screen/Home_screen.dart';
 import 'package:untitled/screen/Login_screen.dart';
 import 'package:untitled/screen/signup_screen.dart';
 
@@ -7,7 +8,6 @@ void main() async{
   runApp(const MyApp());
   await Firebase.initializeApp();
   WidgetsFlutterBinding.ensureInitialized();
-
 }
 
 class MyApp extends StatelessWidget {
@@ -21,8 +21,10 @@ class MyApp extends StatelessWidget {
       routes: {
         LoginScreen.id: (context) => LoginScreen(),
         SignUpScreen.id: (context) => SignUpScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
       },
-      initialRoute: 'LoginScreen',
+      initialRoute: LoginScreen.id,
+      // home: HomeScreen(),
     );
   }
 }

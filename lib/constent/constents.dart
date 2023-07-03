@@ -1,3 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-const KPrimaryColor = Color.fromRGBO(103, 58, 183, 1);
+const KPrimaryColor = Colors.deepPurple;
+
+const String KeyMessageColletions = 'messages';
+

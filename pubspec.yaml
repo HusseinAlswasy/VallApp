@@ -39,6 +39,7 @@ dependencies:
   firebase_auth:
   firebase_core_web:
   modal_progress_hud_nsn: ^0.4.0
+  cloud_firestore:
 
 
 dev_dependencies:
