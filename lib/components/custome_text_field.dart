@@ -7,17 +7,22 @@ class Custom_Text_Field extends StatelessWidget {
   final String text;
   Function(String)? onChanged;
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (data){
+        if(data!.isEmpty){
+          return 'Feild is requiered , Try again';
+        }
+      },
       onChanged: onChanged,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
         hintText: text,
         hintStyle: TextStyle(
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
     );

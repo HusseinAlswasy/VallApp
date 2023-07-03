@@ -15,10 +15,10 @@ class CustomeButton extends StatelessWidget {
         child: Center(
             child: Text(
               text,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white),
             )),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Colors.deepPurple,
           borderRadius: BorderRadius.circular(8),
         ),
       ),
