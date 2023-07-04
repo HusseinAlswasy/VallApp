@@ -5,3 +5,5 @@ const KPrimaryColor = Colors.deepPurple;
 
 const String KeyMessageColletions = 'messages';
 
+const keymessage = 'message';
+

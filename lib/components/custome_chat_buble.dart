@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/constent/constents.dart';
+import 'package:untitled/model/message_model.dart';
 class chatBubule extends StatelessWidget {
-  const chatBubule({
+   chatBubule({
     super.key,
+    required this.message,
   });
 
+  final Message message;
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -22,7 +25,7 @@ class chatBubule extends StatelessWidget {
             color: KPrimaryColor,
           ),
           child: Text(
-            'My Name is Hussein Hassan ',
+            message.message,
             style: TextStyle(color: Colors.white),
           ),
         ),

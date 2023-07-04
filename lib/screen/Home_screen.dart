@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled/components/custome_chat_buble.dart';
 import 'package:untitled/components/custome_texte_feild.dart';
 import 'package:untitled/constent/constents.dart';
+import 'package:untitled/model/message_model.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -17,6 +18,10 @@ class HomeScreen extends StatelessWidget {
       future: messages.get(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
+          List<Message> messagesList = [];
+          for(int i=0; i<snapshot.data!.docs.length; i++){
+            messagesList.add(Message.fromJson(snapshot.data!.docs[i]));
+          }
           return Scaffold(
             appBar: AppBar(
               automaticallyImplyLeading: false,
@@ -36,8 +41,9 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: ListView.builder(
+                    itemCount: messagesList.length,
                     itemBuilder: (context, index) {
-                      return chatBubule();
+                      return chatBubule(message: messagesList[index],);
                     },
                   ),
                 ),
