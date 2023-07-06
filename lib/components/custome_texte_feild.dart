@@ -14,7 +14,8 @@ class CustomeTextFeild extends StatelessWidget {
       controller: controller,
       onSubmitted: (data){
         messages.add({
-          'message': data, // Stokes and Sons
+          keymessage : data, // Stokes and Sons
+          kCreatedAt : DateTime.now(),
         });
         controller.clear();
       },

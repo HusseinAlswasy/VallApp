@@ -14,12 +14,12 @@ class HomeScreen extends StatelessWidget {
       FirebaseFirestore.instance.collection(KeyMessageColletions);
 
   Widget build(BuildContext context) {
-    return FutureBuilder<QuerySnapshot>(
-      future: messages.get(),
+    return StreamBuilder<QuerySnapshot>(
+      stream: messages.orderBy(kCreatedAt).snapshots(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List<Message> messagesList = [];
-          for(int i=0; i<snapshot.data!.docs.length; i++){
+        for(int i=0; i<snapshot.data!.docs.length; i++){
             messagesList.add(Message.fromJson(snapshot.data!.docs[i]));
           }
           return Scaffold(
