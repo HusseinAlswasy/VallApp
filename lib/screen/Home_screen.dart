@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: messages.orderBy(kCreatedAt).snapshots(),
+      stream: messages.orderBy(kCreatedAt,descending: true).snapshots(),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           List<Message> messagesList = [];
@@ -44,6 +44,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: ListView.builder(
+                    reverse: true,
                     controller: _controller,
                     itemCount: messagesList.length,
                     itemBuilder: (context, index) {
@@ -62,8 +63,8 @@ class HomeScreen extends StatelessWidget {
                       });
                       controller.clear();
                       _controller.animateTo(
-                        _controller.position.maxScrollExtent,
-                        duration: Duration(seconds: 1),
+                        0,
+                        duration: Duration(milliseconds: 500),
                         curve: Curves.fastOutSlowIn,
                       );
                     },
