@@ -33,3 +33,36 @@ class chatBubule extends StatelessWidget {
     );
   }
 }
+
+class chatBubule2 extends StatelessWidget {
+  chatBubule2({
+    super.key,
+    required this.message,
+  });
+
+  final Message message;
+  @override
+  Widget build(BuildContext context) {
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 8,top: 16,left: 16,right: 16),
+        child: Container(
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+              bottomLeft: Radius.circular(30),
+            ),
+            color: Color(0xff006D84),
+          ),
+          child: Text(
+            message.message,
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+      ),
+    );
+  }
+}
